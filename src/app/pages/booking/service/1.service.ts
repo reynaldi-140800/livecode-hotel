@@ -21,7 +21,9 @@ export class HotelService {
           guestCount:2,
           reservee: {
             id:1,
-            name:'Amanda Raules'
+            name:'Amanda Raules',
+            email:'abc@mail.com',
+            phone:'21311'
           }
         },
         {
@@ -32,7 +34,9 @@ export class HotelService {
           guestCount: 1,
           reservee: {
             id:2,
-            name:'Nazar'
+            name:'Nazar',
+            email:'12@mail.com',
+            phone:'121222'
           }
         }]
         this.bookings = bookings
@@ -66,9 +70,9 @@ export class HotelService {
         }else{
           booking.id = this.bookings.length + 1
           this.bookings.push(booking)
-          observer.next
+          observer.next()
         }
-        this.setToStorage
+        this.setToStorage()
       } catch (err: any) {
         observer.error(err.message)
       }

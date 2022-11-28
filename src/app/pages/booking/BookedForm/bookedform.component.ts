@@ -22,7 +22,7 @@ export class BookedFormComponent implements OnInit {
   constructor(
     private readonly hotelService: HotelService,
     private readonly route: ActivatedRoute,
-    private readonly router: Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -91,9 +91,9 @@ export class BookedFormComponent implements OnInit {
       this.bookForm.controls['roomNumber']?.setValue(booking.roomNumber)
       this.bookForm.controls['duration']?.setValue(booking.duration)
       this.bookForm.controls['guestCount']?.setValue(booking.guestCount)
-      this.bookForm.controls['name']?.setValue(booking.reservee)
-      this.bookForm.controls['email']?.setValue(booking.reservee)
-      this.bookForm.controls['phone']?.setValue(booking.reservee)
+      this.bookForm.controls['name']?.setValue(booking.reservee.name)
+      this.bookForm.controls['email']?.setValue(booking.reservee.email)
+      this.bookForm.controls['phone']?.setValue(booking.reservee.phone)
     }
   }
 
