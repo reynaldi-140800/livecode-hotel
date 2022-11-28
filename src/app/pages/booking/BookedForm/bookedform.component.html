@@ -1,0 +1,37 @@
+<section class="text-center align-items-center">
+  <h1 class="text-center">ISI FORM</h1>
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Nama</label>
+      <input type="email" class="form-control" formControlName="name" id="name" placeholder="Input Nama">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Email address</label>
+      <input type="email" class="form-control" formControlName="email" id="email" placeholder="name@example.com">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Nomor HP</label>
+      <input type="text" class="form-control" formControlName="phone" id="phone" placeholder="Nomor Handphone">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Nomor Kamar</label>
+      <input type="text" class="form-control" formControlName="roomNumber" id="roomNumber" placeholder="Nomor Kamar">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Lama menginap</label>
+      <input type="text" class="form-control" formControlName="duration" id="duration" placeholder="Lama Menginap">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Jumlah Tamu</label>
+      <select class="form-control" formControlName="guestCount" id="guestCount">
+        <option>1</option>
+        <option>2</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">status</label>
+      <input type="text" class="form-control" formControlName="status" id="status" placeholder="Input Status">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</section>

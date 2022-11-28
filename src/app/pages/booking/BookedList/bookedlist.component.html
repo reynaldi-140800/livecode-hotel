@@ -1,0 +1,53 @@
+<h1 class="text-center">DAFTAR TAMU</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">BookingID</th>
+      <th scope="col">Nama Pemesan</th>
+      <th scope="col">Nomor Kamar</th>
+      <th scope="col">Durasi Menginap</th>
+      <th scope="col">Total Biaya</th>
+      <th scope="col">Jumlah Tamu</th>
+      <th scope="col">Status Pemesanan</th>
+      <th scope="col">Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of bookings">
+      <th scope="row" >{{ item.id }}</th>
+      <td>{{ item.reservee.name }}</td>
+      <td>{{ item.roomNumber }}</td>
+      <td>{{ item.duration }} Jam</td>
+      <td>0</td>
+      <td >{{ item.guestCount }}</td>
+      <td >{{ item.status }}</td>
+      <button  
+        class="bg-primary btn btn-primary" 
+        (click)="onCheckIn(item)"
+        
+        >Check In</button>
+      <button  
+      class="bg-primary btn btn-primary"
+      (click)="onCheckOut(item)"
+      >Check Out</button>
+      <button class="btn btn-link btn-sm float-end visually hidden">
+        <i
+          class="bi bi-trash"
+          style="font-size: 1.2rem"
+          (click)="ondelete(item)"
+        >
+        </i>
+      </button>
+      <button class="btn btn-link btn-sm float-end">
+        <i
+          class="bi bi-pencil-square"
+          style="font-size: 1.2rem"
+          routerLink="/booking/{{item.id}}"
+        ></i>
+      </button>
+      <p class="badge bg-warning text-wrap" role="alert"> 
+        Tamu {{ item.reservee.name }} sudah {{ item.status }} pada kamar {{ item.roomNumber }}
+      </p>
+    </tr>
+  </tbody>
+</table>
